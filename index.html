@@ -40,14 +40,9 @@
       position: fixed;
       inset: 0;
       width: 100%;
-      width: 100vw;
       height: 100vh;
-      height: 100svh;
-      height: var(--app-height, 100dvh);
+      height: 100dvh;
       padding-top: env(safe-area-inset-top, 0px);
-      padding-right: env(safe-area-inset-right, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-      padding-left: env(safe-area-inset-left, 0px);
       background: #0b132b;
       display: flex;
       flex-direction: column;
@@ -62,19 +57,6 @@
       border: none;
       display: block;
       background: #f1f5f9;
-    }
-
-    @media (orientation: portrait) {
-      .app-shell {
-        width: 100vw;
-      }
-    }
-
-    @media (orientation: landscape) {
-      .app-shell {
-        width: 100vw;
-        height: 100vh;
-      }
     }
 
     /* شاشة تحميل سريعة بشعار نهضة أمة حتى يجهز التطبيق */
@@ -174,23 +156,6 @@
   <script>
     const splash = document.getElementById("splash");
     const frame = document.getElementById("appFrame");
-
-    function updateViewportSize() {
-      const viewport = window.visualViewport;
-      const width = viewport ? viewport.width : window.innerWidth;
-      const height = viewport ? viewport.height : window.innerHeight;
-      document.documentElement.style.setProperty("--app-height", `${height}px`);
-      document.documentElement.style.setProperty("--app-width", `${width}px`);
-    }
-
-    updateViewportSize();
-    window.addEventListener("resize", updateViewportSize);
-    window.addEventListener("orientationchange", function () {
-      setTimeout(updateViewportSize, 100);
-    });
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", updateViewportSize);
-    }
 
     function hideSplash() {
       splash.classList.add("done");
