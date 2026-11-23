@@ -1,4 +1,4 @@
-const CACHE_NAME = "nahdat-umma-wrapper-v3";
+const CACHE_NAME = "nahdat-umma-wrapper-v4";
 const FILES = [
   "./",
   "./index.html",

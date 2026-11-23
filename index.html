@@ -42,10 +42,20 @@
       width: auto;
       height: auto;
       padding-top: env(safe-area-inset-top, 0px);
-      background: #0b132b;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      background: #f1f5f9;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+    }
+
+    .app-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: env(safe-area-inset-top, 0px);
+      background: #0b132b;
+      pointer-events: none;
     }
 
     iframe#appFrame {
