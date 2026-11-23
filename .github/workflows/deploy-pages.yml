@@ -3,6 +3,7 @@ name: Deploy Nahdat app to GitHub Pages
 on:
   push:
     branches:
+      - main
       - icwp-ist-nahdat-app-setup
   workflow_dispatch:
 
